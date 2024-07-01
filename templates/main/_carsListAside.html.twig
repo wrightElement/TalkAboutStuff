@@ -1,0 +1,39 @@
+<div class="flex justify-between mt-11 mb-7">
+
+   {# <button data-action="closeable#close"> #}
+      <button data-action="closeable#toggle" class="transition duration-300">
+         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 448 512"><!--!Font Awesome Pro 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc.-->
+            <path fill="#fff"
+               d="M384 96c0-17.7 14.3-32 32-32s32 14.3 32 32V416c0 17.7-14.3 32-32 32s-32-14.3-32-32V96zM9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3L109.3 224 288 224c17.7 0 32 14.3 32 32s-14.3 32-32 32l-178.7 0 73.4 73.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-128-128z" />
+         </svg>
+      </button>
+      <p class="text-[32px] font-semibold">&nbsp;My&nbsp;Garage</p>
+</div>
+
+
+
+<div>
+   {% for car in cars %}
+   <a href="{{ path('app_car_show', {id: car.id}) }}">
+      <div class="flex mt-4" title="{{ car.name|upper }}">
+         <div class="pt-2 border-r border-white/20 pr-5">
+            {% if (car.statusString != 'inactive' ) %}
+            <div class="rounded-full h-4 w-4 bg-green-400 blur-[1px] mr-2"></div>
+            {% else %}
+            <div class="rounded-full h-4 w-4 bg-red-400 blur-[1px] mr-2"></div>
+            {% endif %}
+         </div>
+
+         <div class="pl-5">
+
+            <p class="text-2xl">{{ car.name|upper }}</p>
+
+         </div>
+      </div>
+   </a>
+   {% endfor %}
+   <div class="flex flex-grow-0 p-2 h-[2rem] text-xs overflow-clip">
+      <p> Enjoy looking around my Garage!</p>
+   </div>
+</div>
