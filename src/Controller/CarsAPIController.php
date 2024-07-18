@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Model\Car;
 use App\Repository\CarRepository;
-use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - About
+{% endblock %}
+
+{% block tagLine %}
+
+About Us
+{% endblock %}
+
+{# {% block categoryNav %}
+{% endblock %} #}
+
+{% block main %}
+
+<div class="flex h-[calc(100%-2%)] flex-col m-5 bg-[rgba(0,0,0,0.8)] backdrop-blur-[10px]">
+    <ul class="flex flex-wrap justify-between content-stretch">
+        {% for i in app_info|keys %}
+        <li>
+            <div class="text-xs">• {{i}}:</div>
+            <div class="text-xs">{{app_info[i]}}</div>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="flex-1 text-center">I am the body</div>
+
+</div>
+
+{% endblock %}
