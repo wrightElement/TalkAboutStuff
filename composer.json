@@ -1,5 +1,6 @@
 {
-    "//name": "vw.de/talk-about-stuff",
+    "name": "vw.de/talk-about-stuff",
+    "version": "0.0.3",
     "description": "Lets Talk About Stuff - a Forum",
     "type": "project",
     "authors": [
@@ -9,6 +10,13 @@
         }
     ],
     "license": "proprietary",
+    "owner": [
+        {
+            "copyright": "© 2024",
+            "name": "WrightsDesk",
+            "website": "www.wrightsdesk.com"
+        }
+    ],
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {

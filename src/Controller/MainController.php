@@ -2,17 +2,17 @@
 
 namespace App\Controller;
 
-use App\Constants\MyGlobals;
+// use App\Constants\MyGlobals;
 use App\Repository\CarRepository;
 use App\Repository\CategoryRepository;
 use App\Repository\SpaceshipRepository;
-use phpDocumentor\Reflection\DocBlock\Tags\Var_;
+// use phpDocumentor\Reflection\DocBlock\Tags\Var_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-use function PHPSTORM_META\map;
-use function PHPUnit\Framework\assertIsObject;
+// use function PHPSTORM_META\map;
+// use function PHPUnit\Framework\assertIsObject;
 
 class MainController extends AbstractController
 {
@@ -30,15 +30,17 @@ class MainController extends AbstractController
    {
       $rawJson = file_get_contents('../composer.json');
       $decodedJson = json_decode($rawJson, true);
-      (array) $arrInfo = ['description', 'type', 'authors', 'license'];
-      foreach ($arrInfo as $key) {            //*TODO   proper conversion from object!
+      $infoArray = [];
+      $requiredInfo = ['name', 'description', 'version', 'license', 'owner', 'authors', 'mode', 'type'];
+      foreach ($requiredInfo as $key) {       //*TODO  properly convert deep objects!
+         if (!array_key_exists($key, $decodedJson)) continue;
          if (!is_array($decodedJson[$key])) {
             $infoArray[$key] = $decodedJson[$key];
          } else {
             $tmp1 = (array) $decodedJson[$key];
             foreach ($tmp1 as $tmp2) {
                foreach ($tmp2 as $k => $v) {
-                  $infoArray["$key.$k"] = (string) $v;
+                  $infoArray[$key . "_" . $k] = (string) $v;
                }
             }
          }

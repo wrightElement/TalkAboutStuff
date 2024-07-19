@@ -13,16 +13,30 @@ About Us
 
 {% block main %}
 
-<div class="flex h-[calc(100%-2%)] flex-col m-5 bg-[rgba(0,0,0,0.8)] backdrop-blur-[10px]">
-    <ul class="flex flex-wrap justify-between content-stretch">
+<div class="flex z-50 max-h-max min-h-[72dvh] flex-col m-5 p-5 bg-[rgba(0,0,0,0.8)] backdrop-blur-[10px]"
+    style="border:1px blue solid;">
+    {# h-[calc(100%-20px)] #}
+    <ul class="p-5 flex flex-wrap justify-between content-stretch">
         {% for i in app_info|keys %}
-        <li>
-            <div class="text-xs">• {{i}}:</div>
-            <div class="text-xs">{{app_info[i]}}</div>
+        <li class="p-2 m-2 backdrop-brightness-125 rounded-md">
+            <div class="text-xs text-gray-400">•&nbsp;{{i}}:</div>
+            <div class="text-xs">&nbsp;&nbsp;
+                {% if app_info[i] %}
+                {{app_info[i]}}
+                {% else %}
+                {{app_info[i]}}
+                {% endif %}
+            </div>
         </li>
         {% endfor %}
     </ul>
-    <div class="flex-1 text-center">I am the body</div>
+    <div class="flex justify-center"><img class=" w-1/3" src="{{asset('images/LetsTalkStuff.png')}}"
+            alt="LetsTalkStuff main logo">
+    </div>
+    <div class=" text-center text-info text-sm italic text-red-500">{{app_info.owner_copyright}} • <a class="text-sm"
+            href="{{app_info.owner_website}}" target="_blank">{{app_info.owner_name}} • {{app_info.owner_website}}</a>
+    </div>
+
 
 </div>
 
