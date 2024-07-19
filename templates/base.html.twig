@@ -31,7 +31,7 @@
         <div class="pl-5">
 
             <p class="text-lg">Welcome to </p>
-            <h1 class="text-4xl">Let's TALK👄ABOUT STUFF!!</h1>
+            <h1 class="md:text-4xl text-2xl">Let's TALK👄ABOUT STUFF!!</h1>
             <div class="flex flex-row justify-center h-7 p-2">
                 ⚓{% block tagLine %} {% endblock %}⚓
             </div>
@@ -62,14 +62,14 @@
 
     </header>
 
-    <main class="h-[calc(100vh-210px)] h-min-[80vh] bg-cover"
+    <main class="h-[calc(100dvh-185px-2.5rem)] h-min-[80vh] bg-cover"
         style="background-image:url('{{ asset('images/stuff1.png') }}');">
         {% block main %}
         {% endblock %}
     </main>
 
 
-    <footer class="p-5 bg-white/5 mt-3 text-center bottom-0">
+    <footer class="p-5 bg-white/5 mt-1 text-center bottom-0">
         <a class="text-[#0086C4]" href="https://github.com/vrw-GH/MyCarsGoneBad" target="_blank">on GitHub</a>
     </footer>
 
