@@ -7,20 +7,34 @@
 We have over {{ categories|length *3 }} Categories 😍
 {% endblock %}
 
-{% block categoryNav %}
-{% for category in categories %}
-<li>
-   <a class="rounded-[60px] py-2 px-5 bg-white/10 hover:bg-white/20" href="{{path('app_mainpage')}}">
-      {#title="{{category.category}}" #}
-      {{ category.categoryString }}
-   </a>
+{% block menuOne %}
+<li class="">
+
+   <button class="shadow rounded-[60px] py-2 px-5 bg-white/10 hover:bg-white/20 hover:text-amber-400 
+          focus:outline-none" onclick="toggleDropdown('dropdownCategories')">
+      Categories
+   </button>
+
+   <div class="hidden absolute z-50 w-auto rounded-md    
+   animate-fadeIn" id="dropdownCategories">
+
+      <ul>
+         {% for category in categories %}
+         <li class="mt-3">
+            <a class="rounded-[60px] py-2 px-5 bg-blue-900/90 backdrop-blur-[10px]
+            hover:bg-white/90 hover:text-amber-400" href="{{path('app_mainpage')}}">
+               {#title="{{category.category}}" #}
+               {{ category.categoryString }}
+            </a>
+         </li>
+         {% endfor %}
+      </ul>
+   </div>
 </li>
-{% endfor %}
 {% endblock %}
 
-
 {% block main %}
-<div class="flex flex-col lg:flex-row ">
+<div class="flex flex-col lg:flex-row backdrop-blur-[1px] border-solid border-yellow-300 border">
 
    <aside data-controller="closeable" class="pb-8 lg:pb-0 lg:w-[auto] shrink-0 lg:block lg:min-h-fit text-white px-8
       border-b lg:border-b-0 lg:border-r border-white/20 transition-all overflow-hidden ">

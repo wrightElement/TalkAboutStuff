@@ -31,7 +31,7 @@
         <div class="pl-5">
 
             <p class="text-lg">Welcome to </p>
-            <h1 class="md:text-4xl text-2xl">Let's TALK👄ABOUT STUFF!!</h1>
+            <h1 class="md:text-4xl text-2xl">Let's TALK👄 about STUFF!!</h1>
             <div class="flex flex-row justify-center h-7 p-2">
                 ⚓{% block tagLine %} {% endblock %}⚓
             </div>
@@ -40,22 +40,16 @@
 
         <nav class="space-x-4 font-semibold mr-2">
             <ul class="flex flex-row">
-                <li class="menu">
-                    <a class="rounded-[60px] py-2 px-5 bg-white/10 hover:bg-white/20 hover:text-amber-400 pt-2"
-                        href="{{path('app_mainpage')}}" title="Choose a Category">
-                        Categories
-                    </a>
-                    <ul>
-                        {% block categoryNav %}
-                        {% endblock %}
-                    </ul>
-                </li>
-
                 <li>
-                    <a class="rounded-[60px] py-2 px-5 bg-white/10 hover:bg-white/20 hover:text-amber-400 pt-2"
-                        href="{{path('app_aboutpage')}}" title="Home/About">
-                        About
-                    </a>
+                    {% block menuOne %}{% endblock %}
+                </li>
+                <li>
+                    <button class="shadow rounded-[60px] py-2 px-5 bg-white/10 hover:bg-white/20 hover:text-amber-400 
+          focus:outline-none">
+                        <a href="{{path('app_aboutpage')}}" title="Home/About">
+                            About
+                        </a>
+                    </button>
                 </li>
             </ul>
         </nav>
@@ -64,14 +58,25 @@
 
     <main class="h-[calc(100dvh-185px-2.5rem)] h-min-[80vh] bg-cover"
         style="background-image:url('{{ asset('images/stuff1.png') }}');">
+
         {% block main %}
         {% endblock %}
+
     </main>
 
 
     <footer class="p-5 bg-white/5 mt-1 text-center bottom-0">
-        <a class="text-[#0086C4]" href="https://github.com/vrw-GH/MyCarsGoneBad" target="_blank">on GitHub</a>
+        <a class="text-[#0086C4]" href="https://github.com/vrw-GH/TalkAboutStuff" target="_blank">on GitHub</a>
     </footer>
+
+
+    <script> // Floating SubMenu Toggler
+        function toggleDropdown(menuId) {
+            const dropdownMenu = document
+                .getElementById(menuId);
+            dropdownMenu.classList.toggle('hidden');
+        }
+    </script>
 
 </body>
 
