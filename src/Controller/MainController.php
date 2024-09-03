@@ -48,27 +48,45 @@ class MainController extends AbstractController
       return $this->render('main/about.html.twig', ['app_info' => $infoArray]);
    }
 
-   #[Route('/cars', name: 'app_cars')]
+   #[Route('/autos', name: 'Autos')]
    public function cars(CarRepository $repository): Response
    {
       $things = $repository->findAll();
-      // $carCount = count($cars);
       $myThing = $things[array_rand($things)];
       return $this->render('main/main.html.twig', [
-         // 'numberOfCars' => $carCount,
          'myThing' => $myThing,
          'things' => $things,
       ]);
    }
 
-   #[Route('/spaceships', name: 'app_spaceships')]
+   #[Route('/ships', name: 'Ships')]
+   public function ships(CarRepository $repository): Response
+   {
+      $things = $repository->findAll();
+      $myThing = $things[array_rand($things)];
+      return $this->render('main/main.html.twig', [
+         'myThing' => $myThing,
+         'things' => $things,
+      ]);
+   }
+
+   #[Route('/planes', name: 'Planes')]
+   public function planes(CarRepository $repository): Response
+   {
+      $things = $repository->findAll();
+      $myThing = $things[array_rand($things)];
+      return $this->render('main/main.html.twig', [
+         'myThing' => $myThing,
+         'things' => $things,
+      ]);
+   }
+
+   #[Route('/spaceships', name: 'Spaceships')]
    public function spaceships(SpaceshipRepository $repository): Response
    {
       $things = $repository->getShips();
-      // $carCount = count($cars);
       $myThing = $things[array_rand($things)];
       return $this->render('main/main.html.twig', [
-         // 'numberOfCars' => $carCount,
          'myThing' => $myThing,
          'things' => $things,
       ]);

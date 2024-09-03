@@ -40,17 +40,8 @@
 
         <nav class="space-x-4 font-semibold mr-2">
             <ul class="flex flex-row">
-                <li>
-                    {% block menuOne %}{% endblock %}
-                </li>
-                <li>
-                    <button class="shadow rounded-[60px] py-2 px-5 bg-white/10 hover:bg-white/20 hover:text-amber-400 
-          focus:outline-none">
-                        <a href="{{path('app_aboutpage')}}" title="Home/About">
-                            About
-                        </a>
-                    </button>
-                </li>
+                <li>{% block menuOne %}{% endblock %}</li>
+                <li>{% block menuLast %}{% endblock %}</li>
             </ul>
         </nav>
 
