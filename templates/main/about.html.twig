@@ -12,21 +12,13 @@ About Us
 {% endblock %} #}
 
 
-{% block menuOne %}
-<li class="">
-
+{% block menuLast %}
+<a href="{{path('app_mainpage')}}" title="Home">
     <button class="shadow rounded-[60px] py-2 px-5 bg-white/10 hover:bg-white/20 hover:text-amber-400 
           focus:outline-none">
-        <a href="{{path('app_mainpage')}}" title="Home">
-            ◄ Back
-        </a>
-    </button>
-
-    {# <a class="rounded-[60px] py-2 px-5 bg-white/10 hover:bg-white/20 hover:text-amber-400"
-        href="{{path('app_mainpage')}}" title="Home">
         ◄ Back
-    </a> #}
-</li>
+    </button>
+</a>
 {% endblock %}
 
 {% block main %}
