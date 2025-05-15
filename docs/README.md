@@ -1,6 +1,6 @@
 # Project: Let's Talk About Stuff
 
-## Sample project - <i></i>
+## Sample project <i>- 🚧Under Development🚧</i>
 
 [<img src="https://raw.githubusercontent.com/vrw-GH/assets/main/repo-media/TalkAboutStuff/Screenshot.png" alt="screenshot of app" width="98%">](https:// "click to visit test site")
 
@@ -25,8 +25,8 @@
 ---
 
 <pre>
-Developer:   Victor Wright
+Developer:   Victor Wright (WrightElement)
 Client:      Self
 Date:        Jun 2024
-GH Page:     <a href="https://vrw-gh.github.io/TalkAboutStuff/">vrw-gh.github.io/TalkAboutStuff</a>
+GH Page:     <a href="https://wrightelement.github.io/TalkAboutStuff/">wrightelement.github.io/TalkAboutStuff</a>
 </pre>
